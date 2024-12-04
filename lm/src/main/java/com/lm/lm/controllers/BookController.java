@@ -25,7 +25,7 @@ public class BookController {
 @PostMapping
 public ResponseEntity<Book> addBook(@RequestBody Book book) {
     if (book.getTitle() == null || book.getPrice() == null || book.getCategory() == null || book.getPublisher() == null) {
-        return ResponseEntity.badRequest().build(); // Verifica campos obrigatórios
+        return ResponseEntity.badRequest().build(); 
     }
     return ResponseEntity.ok(bookRepository.save(book));
 }
